@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { View, Text, StyleSheet, ScrollView } from 'react-native';
 import { connect } from 'react-redux';
 // import Icon from 'react-native-vector-icons/EvilIcons';
-import { MKTextField, MKColor, MKButton } from 'react-native-material-kit';
+import { Textfield, MKColor, Button } from 'react-native-material-kit';
 import * as actions from '../actions';
 
 const styles = StyleSheet.create({
@@ -23,9 +23,9 @@ const styles = StyleSheet.create({
     },
 });
 
-const AddButton = MKButton.coloredButton()
-    .withText('ADD')
-    .build();
+// const AddButton = Button.coloredButtonText()
+//     .withText('ADD')
+//     .build();
 
 class AddPerson extends Component {
     static navigationOptions = {
@@ -38,43 +38,43 @@ class AddPerson extends Component {
             <ScrollView showsVerticalScrollIndicator={false}>
                 <View style={styles.form}>
                     <Text>Add a new contact</Text>
-                    <MKTextField
+                    <Textfield
                         textInputStyle={styles.fieldStyles}
                         placeholder={'First name...'}
                         tintColor={MKColor.Teal}
                     />
-                    <MKTextField
+                    <Textfield
                         textInputStyle={styles.fieldStyles}
                         placeholder={'Last name...'}
                         tintColor={MKColor.Teal}
                     />
-                    <MKTextField
+                    <Textfield
                         textInputStyle={styles.fieldStyles}
                         placeholder={'Phone number...'}
                         tintColor={MKColor.Teal}
                     />
-                    <MKTextField
+                    <Textfield
                         textInputStyle={styles.fieldStyles}
                         placeholder={'Email...'}
                         tintColor={MKColor.Teal}
                     />
-                    <MKTextField
+                    <Textfield
                         textInputStyle={styles.fieldStyles}
                         placeholder={'Company...'}
                         tintColor={MKColor.Teal}
                     />
-                    <MKTextField
+                    <Textfield
                         textInputStyle={styles.fieldStyles}
                         placeholder={'Project...'}
                         tintColor={MKColor.Teal}
                     />
-                    <MKTextField
+                    <Textfield
                         textInputStyle={styles.fieldStyles}
                         placeholder={'Notes...'}
                         tintColor={MKColor.Teal}
                     />
                     <View style={styles.addButton}>
-                        <AddButton />
+                        {/*<AddButton />*/}
                     </View>
                 </View>
             </ScrollView>
