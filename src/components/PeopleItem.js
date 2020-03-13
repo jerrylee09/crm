@@ -1,10 +1,11 @@
 import React from 'react';
 import { Text, View, StyleSheet, Image } from 'react-native';
 import { connect } from 'react-redux';
-import { getTheme } from 'react-native-material-kit';
+// react-native-material-kit is breaking react native build * important need to be fix
+// import { getTheme } from 'react-native-material-kit';
 import * as actions from '../actions';
 
-const theme = getTheme();
+// const theme = getTheme();
 
 const styles = StyleSheet.create({
     card: {
