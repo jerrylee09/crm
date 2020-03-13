@@ -1,4 +1,3 @@
-// import { createBottomTabNavigator, createAppContainer } from 'react-navigation';
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import PeopleList from './PeopleList';
