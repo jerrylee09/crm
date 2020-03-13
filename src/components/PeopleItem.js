@@ -1,11 +1,11 @@
 import React from 'react';
 import { Text, View, StyleSheet, Image } from 'react-native';
 import { connect } from 'react-redux';
-// import { getTheme } from 'react-native-material-kit';
+import { getTheme } from 'react-native-material-kit';
 // import Icon from 'react-native-vector-icons/EvilIcons';
 import * as actions from '../actions';
 
-// const theme = getTheme();
+const theme = getTheme();
 
 const styles = StyleSheet.create({
     card: {
@@ -34,22 +34,18 @@ const styles = StyleSheet.create({
 
 const PeopleItem = (props) => {
     return (
-        <View style={[styles.card]}>
-        {/*<View style={[/!*theme.cardStyle*!/, styles.card]}>*/}
+        <View style={[theme.cardStyle, styles.card]}>
             <Image
                 source={require('../images/background.jpg')}
-                style={[styles.image]}
-                // style={[theme.cardImageStyle, styles.image]}
+                style={[theme.cardImageStyle, styles.image]}
             />
             {/*<Icon*/}
             {/*    name={'user'}*/}
             {/*    size={100}*/}
             {/*    style={styles.icon}*/}
             {/*/>*/}
-            <Text style={[styles.title]}>{props.people.firstName} {props.people.lastName}</Text>
-            {/*<Text style={[theme.cardTitleStyle, styles.title]}>{props.people.firstName} {props.people.lastName}</Text>*/}
-            <Text style={[styles.action]}>{props.people.company}</Text>
-            {/*<Text style={[theme.cardActionStyle, styles.action]}>{props.people.company}</Text>*/}
+            <Text style={[theme.cardTitleStyle, styles.title]}>{props.people.firstName} {props.people.lastName}</Text>
+            <Text style={[theme.cardActionStyle, styles.action]}>{props.people.company}</Text>
         </View>
     )
 }
