@@ -21,7 +21,7 @@ export const formUpdate = ({ prop, value }) => {
 
 export const createNewContact = ({ firstName, lastName, phone, email, company, project, notes }) => {
     return (dispatch) => {
-        fetch('localhost:3000/contact', {
+        fetch('http:localhost:3000/contact', {
         // fetch('http://192.168.2.19:3000/contact', {
             method: "POST",
             body: JSON.stringify({
@@ -45,3 +45,17 @@ export const createNewContact = ({ firstName, lastName, phone, email, company, p
             .catch(error => console.log(error))
     };
 };
+
+export const loadInitialContacts = () => {
+    return (dispatch) => {
+        fetch('http://localhost:3000/contact')
+        // fetch('http://192.168.2.19:3000/contact')
+            .then((response) => {
+                return response.json();})
+            .then((data) => {
+                dispatch({ type: 'INITIAL_FETCH', payload: data })
+            })
+            .catch(error => console.log(error))
+    };
+};
+
