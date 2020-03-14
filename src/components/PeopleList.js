@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import { View, StyleSheet, FlatList } from 'react-native';
 import { connect } from 'react-redux';
-// import Icon from 'react-native-vector-icons/EvilIcons';
+import Icon from 'react-native-vector-icons/EvilIcons';
 import PeopleItem from './PeopleItem';
 import PeopleDetail from './PeopleDetail';
+import { loadInitialContacts } from '../actions';
 
 const styles = StyleSheet.create({
     container: {
@@ -18,9 +19,12 @@ const styles = StyleSheet.create({
 class PeopleList extends Component {
     static navigationOptions = {
         tabBarIcon: ({tintColor}) => (
-            <Text>User</Text>
-            // <Icon name={'user'} size={50} color={tintColor} />
+            <Icon name={'user'} size={50} color={tintColor} />
         )
+    }
+
+    componentWillMount() {
+        this.props.loadInitialContacts();
     }
 
     renderInitialView() {
@@ -54,4 +58,4 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps)(PeopleList);
+export default connect(mapStateToProps, { loadInitialContacts })(PeopleList);
